@@ -1,0 +1,72 @@
+{
+  "type": "poopsky_filthdomain:desperate_world",
+  "generator": {
+    "type": "minecraft:noise",
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "poopsky_filthdomain:desperate_wastes",
+          "parameters": {
+            "continentalness": 0.0,
+            "depth": 0.0,
+            "erosion": 0.0,
+            "humidity": 0.0,
+            "offset": 0.0,
+            "temperature": 0.0,
+            "weirdness": 0.0
+          }
+        },
+        {
+          "biome": "poopsky_filthdomain:desperate_soul_sand_valley",
+          "parameters": {
+            "continentalness": 0.0,
+            "depth": 0.0,
+            "erosion": 0.0,
+            "humidity": -0.5,
+            "offset": 0.0,
+            "temperature": 0.0,
+            "weirdness": 0.0
+          }
+        },
+        {
+          "biome": "poopsky_filthdomain:desperate_crimson",
+          "parameters": {
+            "continentalness": 0.0,
+            "depth": 0.0,
+            "erosion": 0.0,
+            "humidity": 0.0,
+            "offset": 0.0,
+            "temperature": 0.4,
+            "weirdness": 0.0
+          }
+        },
+        {
+          "biome": "poopsky_filthdomain:desperate_warped",
+          "parameters": {
+            "continentalness": 0.0,
+            "depth": 0.0,
+            "erosion": 0.0,
+            "humidity": 0.5,
+            "offset": 0.375,
+            "temperature": 0.0,
+            "weirdness": 0.0
+          }
+        },
+        {
+          "biome": "poopsky_filthdomain:desperate_basalt_deltas",
+          "parameters": {
+            "continentalness": 0.0,
+            "depth": 0.0,
+            "erosion": 0.0,
+            "humidity": 0.0,
+            "offset": 0.175,
+            "temperature": -0.5,
+            "weirdness": 0.0
+          }
+        }
+      ]
+    },
+    "settings": "poopsky_filthdomain:desperate_world"
+  }
+}

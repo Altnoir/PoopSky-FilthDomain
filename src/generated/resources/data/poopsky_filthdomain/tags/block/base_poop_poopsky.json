@@ -1,0 +1,19 @@
+{
+  "values": [
+    "poopsky:poop_block",
+    "poopsky:raw_poop_block",
+    "poopsky:poop_bricks",
+    "poopsky:poop_sand",
+    "poopsky:golden_poop_block",
+    "poopsky:saltpeter_block",
+    "poopsky:chili_poop_block",
+    "poopsky:cut_poop_block",
+    "poopsky:smooth_poop_block",
+    "poopsky:dried_poop_block",
+    "poopsky:cracked_poop_bricks",
+    "poopsky:mossy_poop_bricks",
+    "poopsky:raw_sapling_poop_block",
+    "poopsky:raw_sea_poop_block",
+    "poopsky:raw_wither_poop_block"
+  ]
+}

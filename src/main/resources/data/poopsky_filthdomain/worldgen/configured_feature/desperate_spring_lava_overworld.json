@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:spring_feature",
+  "config": {
+    "hole_count": 1,
+    "requires_block_below": true,
+    "rock_count": 4,
+    "state": {
+      "Name": "poopsky:urine",
+      "Properties": {
+        "falling": "true"
+      }
+    },
+    "valid_blocks": [
+      "poopsky:cut_poop_block",
+      "poopsky:poop_empty_log",
+      "poopsky:smooth_poop_block",
+      "poopsky:raw_sea_poop_block",
+      "poopsky:raw_sapling_poop_block",
+      "poopsky:dried_poop_block",
+      "poopsky:chili_poop_block",
+      "poopsky:poop_block"
+    ]
+  }
+}

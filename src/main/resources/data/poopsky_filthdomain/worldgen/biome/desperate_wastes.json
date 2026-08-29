@@ -1,0 +1,95 @@
+{
+  "carvers": {
+    "air": "poopsky_filthdomain:desperate_nether_cave"
+  },
+  "downfall": 0.0,
+  "effects": {
+    "additions_sound": {
+      "sound": "minecraft:ambient.nether_wastes.additions",
+      "tick_chance": 0.0111
+    },
+    "ambient_sound": "minecraft:ambient.nether_wastes.loop",
+    "fog_color": 13934615,
+    "mood_sound": {
+      "block_search_extent": 8,
+      "offset": 2.0,
+      "sound": "minecraft:ambient.nether_wastes.mood",
+      "tick_delay": 6000
+    },
+    "music": {
+      "max_delay": 24000,
+      "min_delay": 12000,
+      "replace_current_music": false,
+      "sound": "minecraft:music.nether.nether_wastes"
+    },
+    "particle": {
+      "options": {
+        "type": "poopsky:poop_particle"
+      },
+      "probability": 0.00625
+    },
+    "sky_color": 13934615,
+    "water_color": 6504996,
+    "water_fog_color": 2890255
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "poopsky_filthdomain:desperate_spring_open",
+      "poopsky_filthdomain:desperate_patch_fire",
+      "poopsky_filthdomain:desperate_patch_soul_fire",
+      "poopsky_filthdomain:desperate_glowstone_extra",
+      "poopsky_filthdomain:desperate_glowstone",
+      "poopsky_filthdomain:desperate_brown_mushroom_nether",
+      "poopsky_filthdomain:desperate_red_mushroom_nether",
+      "poopsky_filthdomain:desperate_ore_magma",
+      "poopsky_filthdomain:desperate_spring_closed",
+      "poopsky_filthdomain:desperate_ore_gravel_nether",
+      "poopsky_filthdomain:desperate_ore_blackstone",
+      "poopsky_filthdomain:desperate_ore_gold_nether",
+      "poopsky_filthdomain:desperate_ore_quartz_nether",
+      "poopsky_filthdomain:desperate_ore_ancient_debris_large",
+      "poopsky_filthdomain:desperate_ore_debris_small"
+    ],
+    [],
+    [
+      "poopsky_filthdomain:desperate_spring_lava",
+      "poopsky_filthdomain:desperate_brown_mushroom_normal",
+      "poopsky_filthdomain:desperate_red_mushroom_normal"
+    ]
+  ],
+  "has_precipitation": false,
+  "spawn_costs": {},
+  "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [
+      {
+        "type": "poopsky:poolime",
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 60
+      }
+    ],
+    "misc": [],
+    "monster": [
+      {
+        "type": "poopsky:poolime",
+        "maxCount": 5,
+        "minCount": 2,
+        "weight": 100
+      }
+    ],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  },
+  "temperature": 2.0
+}
+

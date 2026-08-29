@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:huge_fungus",
+  "config": {
+    "decor_state": {
+      "Name": "poopsky:glow_primo_cap"
+    },
+    "hat_state": {
+      "Name": "poopsky:stripped_primo_hyphae"
+    },
+    "planted": false,
+    "replaceable_blocks": {
+      "type": "minecraft:matching_blocks",
+      "blocks": [
+        "poopsky:poop_sapling",
+        "poopsky:poop_piece",
+        "poopsky:saltpeter_cluster",
+        "poopsky:medium_saltpeter_bud"
+      ]
+    },
+    "stem_state": {
+      "Name": "poopsky:stripped_primo_stem",
+      "Properties": {
+        "axis": "y"
+      }
+    },
+    "valid_base_block": {
+      "Name": "poopsky:mycelium_block"
+    }
+  }
+}

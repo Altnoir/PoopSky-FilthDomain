@@ -1,0 +1,97 @@
+{
+  "carvers": {
+    "air": "poopsky_filthdomain:desperate_nether_cave"
+  },
+  "downfall": 0.0,
+  "effects": {
+    "additions_sound": {
+      "sound": "minecraft:ambient.crimson_forest.additions",
+      "tick_chance": 0.0111
+    },
+    "ambient_sound": "minecraft:ambient.crimson_forest.loop",
+    "fog_color": 13934615,
+    "mood_sound": {
+      "block_search_extent": 8,
+      "offset": 2.0,
+      "sound": "minecraft:ambient.crimson_forest.mood",
+      "tick_delay": 6000
+    },
+    "music": {
+      "max_delay": 24000,
+      "min_delay": 12000,
+      "replace_current_music": false,
+      "sound": "minecraft:music.nether.crimson_forest"
+    },
+    "particle": {
+      "options": {
+        "type": "poopsky:leaves_particle",
+        "color": 4290215468
+      },
+      "probability": 0.025
+    },
+    "sky_color": 13934615,
+    "water_color": 6831138,
+    "water_fog_color": 3020814
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "poopsky_filthdomain:desperate_spring_open",
+      "poopsky_filthdomain:desperate_patch_fire",
+      "poopsky_filthdomain:desperate_glowstone_extra",
+      "poopsky_filthdomain:desperate_glowstone",
+      "poopsky_filthdomain:desperate_ore_magma",
+      "poopsky_filthdomain:desperate_spring_closed",
+      "poopsky_filthdomain:desperate_ore_gravel_nether",
+      "poopsky_filthdomain:desperate_ore_blackstone",
+      "poopsky_filthdomain:desperate_ore_gold_nether",
+      "poopsky_filthdomain:desperate_ore_quartz_nether",
+      "poopsky_filthdomain:desperate_ore_ancient_debris_large",
+      "poopsky_filthdomain:desperate_ore_debris_small"
+    ],
+    [],
+    [
+      "poopsky_filthdomain:desperate_spring_lava",
+      "poopsky_filthdomain:desperate_brown_mushroom_normal",
+      "poopsky_filthdomain:desperate_red_mushroom_normal",
+      "poopsky_filthdomain:desperate_weeping_vines",
+      "poopsky_filthdomain:desperate_crimson_fungi",
+      "poopsky_filthdomain:desperate_maggot_fungi",
+      "poopsky_filthdomain:desperate_crimson_forest_vegetation"
+    ]
+  ],
+  "has_precipitation": false,
+  "spawn_costs": {},
+  "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [
+      {
+        "type": "poopsky:poolime",
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 60
+      }
+    ],
+    "misc": [],
+    "monster": [
+      {
+        "type": "poopsky:poolime",
+        "maxCount": 5,
+        "minCount": 2,
+        "weight": 100
+      }
+    ],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  },
+  "temperature": 2.0
+}
+

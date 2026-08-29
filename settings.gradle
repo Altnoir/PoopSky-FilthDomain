@@ -1,0 +1,15 @@
+pluginManagement {
+    repositories {
+        mavenLocal()
+        gradlePluginPortal()
+        maven { url = 'https://maven.neoforged.net/releases' }
+    }
+}
+
+plugins {
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '1.0.0'
+}
+
+// 开发期可选：直接用 PoopSky 源码参与构建，改完前置无需重新 publish。
+// 启用后 build.gradle 中的依赖坐标会被实时项目替换（依赖声明保持不变）。
+// includeBuild("../PoopSkyMod")

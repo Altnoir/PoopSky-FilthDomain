@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:nether_forest_vegetation",
+  "config": {
+    "spread_height": 4,
+    "spread_width": 8,
+    "state_provider": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "data": {
+            "Name": "poopsky:ginkgo_sapling"
+          },
+          "weight": 87
+        },
+        {
+          "data": {
+            "Name": "poopsky:primo_fungus"
+          },
+          "weight": 11
+        },
+        {
+          "data": {
+            "Name": "poopsky:glow_primo_fungus"
+          },
+          "weight": 1
+        }
+      ]
+    }
+  }
+}
