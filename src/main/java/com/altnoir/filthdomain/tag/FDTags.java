@@ -1,6 +1,6 @@
 package com.altnoir.filthdomain.tag;
 
-import com.altnoir.filthdomain.PoopSkyFilthDomain;
+import com.altnoir.filthdomain.FilthDomain;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
@@ -19,7 +19,7 @@ public final class FDTags {
 
         private static TagKey<Block> create(String path) {
             return TagKey.create(Registries.BLOCK,
-                    ResourceLocation.fromNamespaceAndPath(PoopSkyFilthDomain.MOD_ID, path));
+                    ResourceLocation.fromNamespaceAndPath(FilthDomain.MOD_ID, path));
         }
     }
 }

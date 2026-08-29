@@ -1,4 +1,7 @@
 {
   "itemGroup.poopsky_filthdomain": "空中厕所：秽之域",
+  "itemGroup.poopsky_filthdomain.section.items": "物品",
+  "itemGroup.poopsky_filthdomain.section.blocks": "方块",
+  "block.poopsky_filthdomain.filth_domain_block": "秽之域方块",
   "item.poopsky_filthdomain.filth_domain_shard": "秽之域碎片"
 }

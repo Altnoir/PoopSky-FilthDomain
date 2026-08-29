@@ -1,40 +1,50 @@
 package com.altnoir.filthdomain.datagen;
 
-import com.tterrag.registrate.AbstractRegistrate;
+import com.altnoir.filthdomain.FilthDomain;
 import com.tterrag.registrate.providers.ProviderType;
 import com.tterrag.registrate.providers.RegistrateTagsProvider;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataProvider;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
-import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
 /**
- * 单独挂载的方块标签生成器，绕过 RegistrateDataProvider（见 {@code FDRegistrate} 注释）。
- * 通过公开的 {@link ProviderType#create} 构建 BLOCK_TAGS provider 再运行：
- * MC 的 {@code TagsProvider.run} 会在同一条 CompletableFuture 链上执行
- * createContentsProvider → addTags（触发 FDBlockTagGen.generate）→ 写文件，
- * 不存在并发 createContentsProvider 竞态。
+ * 单独挂载的方块标签生成器（世界生成标签）。
+ * <p>
+ * 为什么不注册到 Registrate 默认的 RegistrateDataProvider：其构造过程会通过
+ * getFilledProvider() 急切触发 createContentsProvider()（内部 clear + addTags），
+ * 当同一 datagen 进程里还有前置 PoopSky 的 RegistrateDataProvider 并发运行时，
+ * 会与 TagsProvider.run 的迭代撞车（ConcurrentModificationException，稳定复现）。
+ * 这里自行构建 BLOCK_TAGS provider 并重写 addTags，整条链路单线程、无竞态。
  */
 public class FDTagsProvider implements DataProvider {
 
-    private final AbstractRegistrate<?> registrate;
     private final GatherDataEvent event;
-    private final CompletableFuture<HolderLookup.Provider> lookupProvider;
 
-    public FDTagsProvider(AbstractRegistrate<?> registrate, GatherDataEvent event) {
-        this.registrate = registrate;
+    public FDTagsProvider(GatherDataEvent event) {
         this.event = event;
-        this.lookupProvider = event.getLookupProvider();
     }
 
     @Override
     public CompletableFuture<?> run(CachedOutput output) {
-        RegistrateTagsProvider.IntrinsicImpl<Block> tags = ProviderType.create(
-                ProviderType.BLOCK_TAGS, registrate, event, Map.of(), lookupProvider);
+        RegistrateTagsProvider.IntrinsicImpl<Block> tags = new RegistrateTagsProvider.IntrinsicImpl<>(
+                FilthDomain.registrate(),
+                ProviderType.BLOCK_TAGS,
+                "blocks",
+                event.getGenerator().getPackOutput(),
+                Registries.BLOCK,
+                event.getLookupProvider(),
+                block -> block.builtInRegistryHolder().key(),
+                event.getExistingFileHelper()) {
+            @Override
+            protected void addTags(HolderLookup.Provider provider) {
+                FDBlockTagGen.addTags(this);
+            }
+        };
         return tags.run(output);
     }
 

@@ -1,5 +1,5 @@
 {
-  "type": "poopsky_filthdomain:desperate_world",
+  "type": "poopsky_filthdomain:filthdomain",
   "generator": {
     "type": "minecraft:noise",
     "biome_source": {
@@ -67,6 +67,6 @@
         }
       ]
     },
-    "settings": "poopsky_filthdomain:desperate_world"
+    "settings": "poopsky_filthdomain:filthdomain"
   }
 }

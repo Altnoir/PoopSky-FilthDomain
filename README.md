@@ -54,7 +54,7 @@ PoItems.POOP.get();
 
 模组内置了"绝望世界"维度数据包（Nether 风格，5 个生物群系），全部挂在本模组命名空间下，不与其他模组冲突：
 
-- 维度 ID：`poopsky_filthdomain:desperate_world`
+- 维度 ID：`poopsky_filthdomain:filthdomain`
 - 维度类型：`poopsky_filthdomain:desperate_world`
 - 生物群系：`poopsky_filthdomain:desperate_wastes` / `desperate_soul_sand_valley` / `desperate_crimson` / `desperate_warped` / `desperate_basalt_deltas`
 - 地表/噪声/特性/雕刻器全部为 `poopsky_filthdomain:desperate_*`
@@ -64,7 +64,7 @@ PoItems.POOP.get();
 进入方式（数据包本身不含传送门，先直接传送）：
 
 ```
-/execute in poopsky_filthdomain:desperate_world run tp @s 0 64 0
+/execute in poopsky_filthdomain:filthdomain run tp @s 0 64 0
 ```
 
 > 提示：维度的世界生成数据位于 `src/main/resources/data/poopsky_filthdomain/`，直接手写维护即可；**方块标签（`tags/block/`）由 datagen 生成**：`datagen/FDBlockTagGen.java` 采用与前置一致的 Registrate `addDataGenerator` 写法，通过 `FDTagsProvider`（+ `FDRegistrate`）单独挂载，避免两个 Registrate 实例并存时 RegistrateDataProvider 的并发竞态。改标签后运行 `./gradlew runData`（输出到 `src/generated/resources`）。如需传送物品/传送门，可在附属代码里加。
