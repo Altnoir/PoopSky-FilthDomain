@@ -12,9 +12,9 @@ public final class FDTags {
     }
 
     public static final class Blocks {
-        // 绝望世界的基础粪便方块（远古残骸矿石的生成目标）
-        public static final TagKey<Block> BASE_POOP_POOP = create("base_poop_poopsky");
-        // 绝望世界洞穴雕刻器可替换方块
+        // 世界的基础粪便方块（远古残骸矿石的生成目标）
+        public static final TagKey<Block> BASE_POOP = create("base_poop");
+        // 洞穴雕刻器可替换方块
         public static final TagKey<Block> DESPERATE_CARVER_REPLACEABLES = create("desperate_carver_replaceables");
 
         private static TagKey<Block> create(String path) {

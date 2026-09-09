@@ -32,7 +32,7 @@ versionRange = "[2.2,)"
 ordering = "AFTER"
 side = "BOTH"
 
-# 前置库：AbyssLib（提供 Registrate / SBM 运行时与 ALRegistrate）
+# 前置库：AbyssLib（提供 Registrate 运行时与 ALRegistrate）
 [[dependencies.${mod_id}]]
 modId = "abysslib"
 type = "required"
