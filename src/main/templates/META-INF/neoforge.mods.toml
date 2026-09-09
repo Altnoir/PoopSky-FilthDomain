@@ -36,6 +36,6 @@ side = "BOTH"
 [[dependencies.${mod_id}]]
 modId = "abysslib"
 type = "required"
-versionRange = "[1.1,)"
+versionRange = "[1.2,)"
 ordering = "AFTER"
 side = "BOTH"
