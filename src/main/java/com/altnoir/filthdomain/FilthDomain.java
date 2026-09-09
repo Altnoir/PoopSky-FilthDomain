@@ -5,6 +5,7 @@ import com.altnoir.filthdomain.datagen.FDLangGen;
 import com.altnoir.filthdomain.init.FDBlocks;
 import com.altnoir.filthdomain.init.FDItemGroups;
 import com.altnoir.filthdomain.init.FDItems;
+import com.altnoir.abysslib.AbyssLib;
 import com.altnoir.abysslib.registrate.ALRegistrate;
 import com.mojang.logging.LogUtils;
 import net.minecraft.resources.ResourceLocation;
@@ -33,6 +34,6 @@ public class FilthDomain {
     }
 
     public static ResourceLocation loc(String path) {
-        return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
+        return AbyssLib.modloc(MOD_ID, path);
     }
 }
