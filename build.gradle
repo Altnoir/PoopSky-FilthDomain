@@ -16,7 +16,16 @@ repositories {
     mavenLocal()
     // 前置 PoopSky 的本地发布仓库：先在 ../PoopSkyMod 下执行 ./gradlew publish
     maven { url = file("../PoopSkyMod/repo") }
-    maven { url = "https://mvn.devos.one/snapshots" } // Registrate（前置 jarJar 打包的同款）
+    // 前置库 AbyssLib 的本地发布仓库：先在 ../AbyssLib 下执行 ./gradlew publish
+    maven { url = file("../AbyssLib/repo") }
+    maven { url = "https://mvn.devos.one/snapshots" } // Registrate（AbyssLib POM 传递、编译期可见同款）
+    maven {
+        url = "https://jitpack.io" // Simple Bedrock Model（AbyssLib POM 传递依赖解析用）
+        content {
+            includeGroup "com.github.mcmodderanchor"
+            includeGroup "com.github.rtyley"
+        }
+    }
 }
 
 base {
@@ -77,9 +86,9 @@ dependencies {
     implementation("com.altnoir.poopsky:PoopSkyMod:${poopsky_version}") {
         transitive = false
     }
-    // Registrate：前置已经 jarJar 内置（运行时直接用它那份），这里只作为"导入库"
-    // 提供编译期可见即可，不打包、不内置，避免 dev 环境出现两份 Registrate。
-    compileOnly "com.tterrag.registrate:Registrate:${registrate_version}"
+    // 前置库：AbyssLib 是 Registrate / SBM 的唯一提供者——运行时由它 jarJar，
+    // 编译期由它的 api 依赖传递（无需本工程再声明 Registrate / SBM）。
+    implementation("com.altnoir.abysslib:AbyssLib:${abysslib_version}")
 }
 
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {

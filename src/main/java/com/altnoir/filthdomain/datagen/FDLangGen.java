@@ -1,11 +1,11 @@
 package com.altnoir.filthdomain.datagen;
 
 import com.altnoir.filthdomain.FilthDomain;
-import com.altnoir.poopsky.impl.registrate.PoRegistrate;
+import com.altnoir.abysslib.registrate.ALRegistrate;
 import com.tterrag.registrate.providers.ProviderType;
 
 public final class FDLangGen {
-    private static final PoRegistrate REGISTRATE = FilthDomain.registrate();
+    private static final ALRegistrate REGISTRATE = FilthDomain.registrate();
 
     private FDLangGen() {
     }

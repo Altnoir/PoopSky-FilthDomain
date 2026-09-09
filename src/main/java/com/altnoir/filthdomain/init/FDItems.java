@@ -1,7 +1,7 @@
 package com.altnoir.filthdomain.init;
 
 import com.altnoir.filthdomain.FilthDomain;
-import com.altnoir.poopsky.impl.registrate.PoRegistrate;
+import com.altnoir.abysslib.registrate.ALRegistrate;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.Item;
@@ -11,10 +11,10 @@ import java.util.List;
 
 /**
  * 附属模组的物品注册（Registrate 写法，与前置一致）。
- * PoItemBuilder 会自动生成默认模型与语言键。
+ * ALItemBuilder 会自动生成默认模型与语言键。
  */
 public final class FDItems {
-    private static final PoRegistrate REGISTRATE = FilthDomain.registrate();
+    private static final ALRegistrate REGISTRATE = FilthDomain.registrate();
 
     private FDItems() {
     }
