@@ -20,7 +20,7 @@ public final class FDItemGroups {
     public static final String TAB_KEY = "itemGroup.poopsky_filthdomain";
 
     /** Filth Domain 创造栏横幅配色：与 PoopSky 同蓝系但更深。 */
-    private static final ALBannerStyle BANNER = ALBannerStyle.colors(
+    private static final ALBannerStyle BANNER = ALBannerStyle.colors(2,
             0xFF0C2238,
             0xFF48617C,  // 暗边框
             0xFF7090B5,  // 亮边框
@@ -36,7 +36,7 @@ public final class FDItemGroups {
                             CreativeModeTab.builder()
                                     .title(Component.translatable(TAB_KEY))
                                     .icon(FDItems.FILTH_DOMAIN_SHARD::asStack),
-                            ALBannerStyle.texture(2),
+                            BANNER,
                             FDItemGroups::populate,
                             TS_ITEMS,
                             TS_BLOCKS
