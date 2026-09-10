@@ -2,7 +2,7 @@ package com.altnoir.filthdomain.datagen;
 
 import com.altnoir.filthdomain.tag.FDTags;
 import com.altnoir.poopsky.init.PoBlocks;
-import com.tterrag.registrate.providers.RegistrateTagsProvider;
+import com.altnoir.abysslib.reginth.providers.ReginthTagsProvider;
 import net.minecraft.data.tags.IntrinsicHolderTagsProvider;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
@@ -16,12 +16,12 @@ import net.minecraft.world.level.block.Block;
  * {@code FDTagsProvider} 在 addTags 阶段直接调用本方法。
  */
 public final class FDBlockTagGen {
-    private static RegistrateTagsProvider.IntrinsicImpl<Block> provider;
+    private static ReginthTagsProvider.IntrinsicImpl<Block> provider;
 
     private FDBlockTagGen() {
     }
 
-    public static void addTags(RegistrateTagsProvider.IntrinsicImpl<Block> provider) {
+    public static void addTags(ReginthTagsProvider.IntrinsicImpl<Block> provider) {
         FDBlockTagGen.provider = provider;
 
         Block[] basePoopBlocks = {

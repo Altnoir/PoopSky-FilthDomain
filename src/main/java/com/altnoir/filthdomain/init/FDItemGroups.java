@@ -3,9 +3,9 @@ package com.altnoir.filthdomain.init;
 import com.altnoir.abysslib.creative.ALBannerStyle;
 import com.altnoir.abysslib.creative.ALCreativeTabSection;
 import com.altnoir.abysslib.creative.ALSectionedCreativeModeTab;
-import com.altnoir.abysslib.registrate.ALRegistrate;
+import com.altnoir.abysslib.reginth.Reginth;
 import com.altnoir.filthdomain.FilthDomain;
-import com.tterrag.registrate.util.entry.RegistryEntry;
+import com.altnoir.abysslib.reginth.util.entry.RegistryEntry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -15,7 +15,7 @@ import net.minecraft.world.item.Item;
  * 附属自己的创造栏（复用 AbyssLib 的分区式创造栏：ALSectionedCreativeModeTab）。
  */
 public final class FDItemGroups {
-    private static final ALRegistrate REGISTRATE = FilthDomain.registrate();
+    private static final Reginth REGISTRATE = FilthDomain.registrate();
 
     public static final String TAB_KEY = "itemGroup.poopsky_filthdomain";
 

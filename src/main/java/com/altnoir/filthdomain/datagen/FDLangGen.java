@@ -1,11 +1,11 @@
 package com.altnoir.filthdomain.datagen;
 
 import com.altnoir.filthdomain.FilthDomain;
-import com.altnoir.abysslib.registrate.ALRegistrate;
-import com.tterrag.registrate.providers.ProviderType;
+import com.altnoir.abysslib.reginth.Reginth;
+import com.altnoir.abysslib.reginth.providers.ProviderType;
 
 public final class FDLangGen {
-    private static final ALRegistrate REGISTRATE = FilthDomain.registrate();
+    private static final Reginth REGISTRATE = FilthDomain.registrate();
 
     private FDLangGen() {
     }

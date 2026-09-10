@@ -1,8 +1,8 @@
 package com.altnoir.filthdomain.init;
 
 import com.altnoir.filthdomain.FilthDomain;
-import com.altnoir.abysslib.registrate.ALRegistrate;
-import com.tterrag.registrate.util.entry.BlockEntry;
+import com.altnoir.abysslib.reginth.Reginth;
+import com.altnoir.abysslib.reginth.util.entry.BlockEntry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -12,11 +12,11 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import java.util.List;
 
 /**
- * 附属模组的方块注册（Registrate 写法，与前置一致）。
- * ALBlockBuilder 会自动生成默认 blockstate / 战利品表 / 语言键，并自动创建方块物品。
+ * 附属模组的方块注册（Reginth 写法，与前置一致）。
+ * ReginthBlockBuilder 会自动生成默认 blockstate / 战利品表 / 语言键，并自动创建方块物品。
  */
 public final class FDBlocks {
-    private static final ALRegistrate REGISTRATE = FilthDomain.registrate();
+    private static final Reginth REGISTRATE = FilthDomain.registrate();
 
     private FDBlocks() {
     }

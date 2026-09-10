@@ -1,8 +1,8 @@
 package com.altnoir.filthdomain.datagen;
 
 import com.altnoir.filthdomain.FilthDomain;
-import com.tterrag.registrate.providers.ProviderType;
-import com.tterrag.registrate.providers.RegistrateTagsProvider;
+import com.altnoir.abysslib.reginth.providers.ProviderType;
+import com.altnoir.abysslib.reginth.providers.ReginthTagsProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.CachedOutput;
@@ -31,7 +31,7 @@ public class FDTagsProvider implements DataProvider {
 
     @Override
     public CompletableFuture<?> run(CachedOutput output) {
-        RegistrateTagsProvider.IntrinsicImpl<Block> tags = new RegistrateTagsProvider.IntrinsicImpl<>(
+        ReginthTagsProvider.IntrinsicImpl<Block> tags = new ReginthTagsProvider.IntrinsicImpl<>(
                 FilthDomain.registrate(),
                 ProviderType.BLOCK_TAGS,
                 "blocks",
