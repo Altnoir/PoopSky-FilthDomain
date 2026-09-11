@@ -18,7 +18,6 @@ public class FilthDomain {
     public static final String MOD_ID = "poopsky_filthdomain";
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    // 用 AbyssLib 的 ALRegistrate（通用 Registrate 定制），绑定到附属自己的 mod id
     private static final Reginth REGINTH = Reginth.create(MOD_ID);
 
     public FilthDomain(IEventBus modEventBus) {
