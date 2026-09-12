@@ -80,14 +80,11 @@ neoForge {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
-    // 前置：PoopSky（附属代码直接引用 com.altnoir.poopsky.*）。
     // transitive=false：不解析前置 POM 中的运行时依赖（Create、车万女仆等由前置自行管理）。
     // implementation 不会被打包进附属的 jar，运行游戏时前置由玩家单独安装。
     implementation("com.altnoir.poopsky:PoopSkyMod:${poopsky_version}") {
         transitive = false
     }
-    // 前置库：AbyssLib 是 Registrate / SBM 的唯一提供者——运行时由它 jarJar，
-    // 编译期由它的 api 依赖传递（无需本工程再声明 Registrate / SBM）。
     implementation("com.altnoir.abysslib:AbyssLib:${abysslib_version}")
 }
 
