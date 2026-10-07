@@ -1,8 +1,8 @@
 package com.altnoir.filthdomain.init;
 
-import com.altnoir.abysslib.creative.ALBannerStyle;
-import com.altnoir.abysslib.creative.ALCreativeTabSection;
-import com.altnoir.abysslib.creative.ALSectionedCreativeModeTab;
+import com.altnoir.abysslib.creative.BannerStyle;
+import com.altnoir.abysslib.creative.CreativeTabSection;
+import com.altnoir.abysslib.creative.SectionedCreativeModeTab;
 import com.altnoir.abysslib.reginth.Reginth;
 import com.altnoir.filthdomain.FilthDomain;
 import com.altnoir.abysslib.reginth.util.entry.RegistryEntry;
@@ -12,23 +12,23 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 
 /**
- * 附属自己的创造栏（复用 AbyssLib 的分区式创造栏：ALSectionedCreativeModeTab）。
+ * 附属自己的创造栏（复用 AbyssLib 的分区式创造栏：SectionedCreativeModeTab）。
  */
 public final class FDItemGroups {
     private static final Reginth REGISTRATE = FilthDomain.registrate();
 
     public static final String TAB_KEY = "itemGroup.poopsky_filthdomain";
 
-    public static final ALCreativeTabSection TS_ITEMS = section("itemGroup.poopsky_filthdomain.section.items");
-    public static final ALCreativeTabSection TS_BLOCKS = section("itemGroup.poopsky_filthdomain.section.blocks");
+    public static final CreativeTabSection TS_ITEMS = section("itemGroup.poopsky_filthdomain.section.items");
+    public static final CreativeTabSection TS_BLOCKS = section("itemGroup.poopsky_filthdomain.section.blocks");
 
     public static final RegistryEntry<CreativeModeTab, CreativeModeTab> TAB = REGISTRATE.generic("filth_domain",
             Registries.CREATIVE_MODE_TAB, () ->
-                    ALSectionedCreativeModeTab.configure(
+                    SectionedCreativeModeTab.configure(
                             CreativeModeTab.builder()
                                     .title(Component.translatable(TAB_KEY))
                                     .icon(FDItems.FILTH_DOMAIN_SHARD::asStack),
-                            ALBannerStyle.colors(3, 0xFF0C2238, 0xFF48617C, 0xFF7090B5, 0xFFDCE9F8),
+                            BannerStyle.colors(3, 0xFF0C2238, 0xFF48617C, 0xFF7090B5, 0xFFDCE9F8),
                             FDItemGroups::populate,
                             TS_ITEMS,
                             TS_BLOCKS
@@ -44,8 +44,8 @@ public final class FDItemGroups {
         }
     }
 
-    private static ALCreativeTabSection section(String translationKey) {
-        return new ALCreativeTabSection(translationKey);
+    private static CreativeTabSection section(String translationKey) {
+        return new CreativeTabSection(translationKey);
     }
 
     public static void register() {
