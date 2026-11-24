@@ -3,5 +3,19 @@
   "itemGroup.poopsky_filthdomain.section.items": "物品",
   "itemGroup.poopsky_filthdomain.section.blocks": "方块",
   "block.poopsky_filthdomain.filth_domain_block": "秽之域方块",
-  "item.poopsky_filthdomain.filth_domain_shard": "秽之域碎片"
+  "block.poopsky_filthdomain.filthdomain_portal": "秽之域传送门",
+  "biome.poopsky_filthdomain.poop_forest": "粪便森林",
+  "biome.poopsky_filthdomain.filth_plains": "秽原",
+  "biome.poopsky_filthdomain.soul_ash_valley": "魂灰谷",
+  "biome.poopsky_filthdomain.bloodcap_forest": "赤菌林",
+  "biome.poopsky_filthdomain.sporewood": "孢瘴林",
+  "biome.poopsky_filthdomain.basalt_badlands": "玄岩裂地",
+  "entity.poopsky_filthdomain.basilisk": "咒蛙",
+  "item.poopsky_filthdomain.basilisk_spawn_egg": "咒蛙刷怪蛋",
+  "item.poopsky_filthdomain.eye_of_basilisk": "咒蛙之眼",
+  "item.poopsky_filthdomain.filth_domain_shard": "秽之域碎片",
+  "jei.poopsky_filthdomain.altar.description.portal": "将中央祭坛替换为秽之域传送门。空间不足时可从祭坛取出门体物品。",
+  "subtitle.poopsky_filthdomain.basilisk.ambient": "咒蛙：鸣叫",
+  "subtitle.poopsky_filthdomain.basilisk.death": "咒蛙：死亡",
+  "subtitle.poopsky_filthdomain.basilisk.hurt": "咒蛙：受伤"
 }

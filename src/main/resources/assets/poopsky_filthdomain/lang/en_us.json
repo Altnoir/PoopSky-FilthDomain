@@ -1,0 +1,21 @@
+{
+  "itemGroup.poopsky_filthdomain": "Sky Toilet: Filth Domain",
+  "itemGroup.poopsky_filthdomain.section.items": "Items",
+  "itemGroup.poopsky_filthdomain.section.blocks": "Blocks",
+  "block.poopsky_filthdomain.filth_domain_block": "Filth Domain Block",
+  "block.poopsky_filthdomain.filthdomain_portal": "Filth Domain Portal",
+  "biome.poopsky_filthdomain.poop_forest": "Poop Forest",
+  "biome.poopsky_filthdomain.filth_plains": "Filth Plains",
+  "biome.poopsky_filthdomain.soul_ash_valley": "Soul Ash Valley",
+  "biome.poopsky_filthdomain.bloodcap_forest": "Bloodcap Forest",
+  "biome.poopsky_filthdomain.sporewood": "Sporewood",
+  "biome.poopsky_filthdomain.basalt_badlands": "Basalt Badlands",
+  "entity.poopsky_filthdomain.basilisk": "Basilisk",
+  "item.poopsky_filthdomain.basilisk_spawn_egg": "Basilisk Spawn Egg",
+  "item.poopsky_filthdomain.eye_of_basilisk": "Eye of Basilisk",
+  "item.poopsky_filthdomain.filth_domain_shard": "Filth Domain Shard",
+  "jei.poopsky_filthdomain.altar.description.portal": "Replaces the altar with a Filth Domain Portal. If blocked, leaves the portal item in the altar.",
+  "subtitle.poopsky_filthdomain.basilisk.ambient": "Basilisk croaks",
+  "subtitle.poopsky_filthdomain.basilisk.death": "Basilisk dies",
+  "subtitle.poopsky_filthdomain.basilisk.hurt": "Basilisk hurts"
+}

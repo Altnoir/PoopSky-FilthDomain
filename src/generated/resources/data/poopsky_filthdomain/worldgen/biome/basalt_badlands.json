@@ -1,0 +1,98 @@
+{
+  "carvers": {
+    "air": "poopsky_filthdomain:filth_cave"
+  },
+  "downfall": 0.0,
+  "effects": {
+    "additions_sound": {
+      "sound": "minecraft:ambient.basalt_deltas.additions",
+      "tick_chance": 0.0111
+    },
+    "ambient_sound": "minecraft:ambient.basalt_deltas.loop",
+    "fog_color": 13148183,
+    "mood_sound": {
+      "block_search_extent": 8,
+      "offset": 2.0,
+      "sound": "minecraft:ambient.basalt_deltas.mood",
+      "tick_delay": 6000
+    },
+    "music": {
+      "max_delay": 24000,
+      "min_delay": 12000,
+      "replace_current_music": false,
+      "sound": "minecraft:music.nether.basalt_deltas"
+    },
+    "particle": {
+      "options": {
+        "type": "poopsky_filthdomain:filth_ash"
+      },
+      "probability": 0.118093334
+    },
+    "sky_color": 13148183,
+    "water_color": 5783080,
+    "water_fog_color": 2628626
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [
+      "poopsky_filthdomain:delta",
+      "poopsky_filthdomain:small_basalt_columns",
+      "poopsky_filthdomain:large_basalt_columns"
+    ],
+    [],
+    [],
+    [
+      "poopsky_filthdomain:basalt_blobs",
+      "poopsky_filthdomain:blackstone_blobs",
+      "poopsky_filthdomain:basalt_urine_spring",
+      "poopsky_filthdomain:patch_fire",
+      "poopsky_filthdomain:patch_soul_fire",
+      "poopsky_filthdomain:glowstone_extra",
+      "poopsky_filthdomain:glowstone",
+      "poopsky_filthdomain:brown_mushroom_cavern",
+      "poopsky_filthdomain:red_mushroom_cavern",
+      "poopsky_filthdomain:ore_magma",
+      "poopsky_filthdomain:dense_sealed_urine_springs",
+      "poopsky_filthdomain:ore_gold_in_basalt",
+      "poopsky_filthdomain:ore_quartz_in_basalt",
+      "poopsky_filthdomain:ore_ancient_debris_large",
+      "poopsky_filthdomain:ore_ancient_debris_small"
+    ]
+  ],
+  "has_precipitation": false,
+  "spawn_costs": {},
+  "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [
+      {
+        "type": "poopsky:poolime",
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 60
+      }
+    ],
+    "misc": [],
+    "monster": [
+      {
+        "type": "poopsky_filthdomain:basilisk",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 40
+      },
+      {
+        "type": "poopsky:poolime",
+        "maxCount": 5,
+        "minCount": 2,
+        "weight": 100
+      }
+    ],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  },
+  "temperature": 2.0
+}

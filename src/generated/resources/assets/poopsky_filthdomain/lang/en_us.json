@@ -1,0 +1,10 @@
+{
+  "block.poopsky_filthdomain.filth_domain_block": "Filth Domain Block",
+  "block.poopsky_filthdomain.filthdomain_portal": "Filth Domain Portal",
+  "item.poopsky_filthdomain.basilisk_spawn_egg": "Basilisk Spawn Egg",
+  "item.poopsky_filthdomain.eye_of_basilisk": "Eye Of Basilisk",
+  "item.poopsky_filthdomain.filth_domain_shard": "Filth Domain Shard",
+  "itemGroup.poopsky_filthdomain": "Sky Toilet: Filth Domain",
+  "itemGroup.poopsky_filthdomain.section.blocks": "Blocks",
+  "itemGroup.poopsky_filthdomain.section.items": "Items"
+}

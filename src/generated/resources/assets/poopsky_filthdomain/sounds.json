@@ -1,0 +1,38 @@
+{
+  "entity.basilisk.ambient": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.frog.ambient"
+      }
+    ],
+    "subtitle": "subtitle.poopsky_filthdomain.basilisk.ambient"
+  },
+  "entity.basilisk.death": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.frog.death"
+      }
+    ],
+    "subtitle": "subtitle.poopsky_filthdomain.basilisk.death"
+  },
+  "entity.basilisk.hurt": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.frog.hurt"
+      }
+    ],
+    "subtitle": "subtitle.poopsky_filthdomain.basilisk.hurt"
+  },
+  "entity.basilisk.step": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "entity.frog.step"
+      }
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  }
+}

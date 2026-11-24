@@ -1,0 +1,43 @@
+{
+  "type": "poopsky:ominous_altar",
+  "command": "poopsky_filthdomain:replace_altar",
+  "description": "jei.poopsky_filthdomain.altar.description.portal",
+  "duration": 400,
+  "fluid": {
+    "amount": 4000,
+    "id": "poopsky:urine"
+  },
+  "input": {
+    "item": "poopsky_filthdomain:filth_domain_shard"
+  },
+  "pedestals": [
+    {
+      "item": "poopsky:poop_bricks"
+    },
+    {
+      "item": "poopsky:urea"
+    },
+    {
+      "item": "poopsky:poop_bricks"
+    },
+    {
+      "item": "poopsky:urea"
+    },
+    {
+      "item": "poopsky:poop_bricks"
+    },
+    {
+      "item": "poopsky:urea"
+    },
+    {
+      "item": "poopsky:poop_bricks"
+    },
+    {
+      "item": "poopsky:urea"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "poopsky_filthdomain:filthdomain_portal"
+  }
+}

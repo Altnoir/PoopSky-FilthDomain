@@ -15,7 +15,7 @@ public final class FDTags {
         // 世界的基础粪便方块（远古残骸矿石的生成目标）
         public static final TagKey<Block> BASE_POOP = create("base_poop");
         // 洞穴雕刻器可替换方块
-        public static final TagKey<Block> DESPERATE_CARVER_REPLACEABLES = create("desperate_carver_replaceables");
+        public static final TagKey<Block> FILTH_CAVE_REPLACEABLES = create("filth_cave_replaceables");
 
         private static TagKey<Block> create(String path) {
             return TagKey.create(Registries.BLOCK,

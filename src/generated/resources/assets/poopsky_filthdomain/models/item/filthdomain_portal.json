@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "poopsky_filthdomain:item/filthdomain_portal"
+  }
+}

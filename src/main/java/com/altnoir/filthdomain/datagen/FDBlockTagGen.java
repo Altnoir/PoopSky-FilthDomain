@@ -42,7 +42,7 @@ public final class FDBlockTagGen {
                 PoBlocks.RAW_WITHER_POOP_BLOCK.get(),
         };
         tag(FDTags.Blocks.BASE_POOP).add(basePoopBlocks);
-        tag(FDTags.Blocks.DESPERATE_CARVER_REPLACEABLES).add(basePoopBlocks);
+        tag(FDTags.Blocks.FILTH_CAVE_REPLACEABLES).add(basePoopBlocks);
     }
 
     private static IntrinsicHolderTagsProvider.IntrinsicTagAppender<Block> tag(TagKey<Block> tag) {

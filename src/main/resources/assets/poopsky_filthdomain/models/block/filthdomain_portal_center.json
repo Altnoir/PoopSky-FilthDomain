@@ -1,0 +1,23 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"render_type": "minecraft:translucent",
+	"texture_size": [32, 32],
+	"textures": {
+		"particle": "poopsky_filthdomain:block/filthdomain_portal",
+		"all": "poopsky_filthdomain:block/filthdomain_portal"
+	},
+	"elements": [
+		{
+			"from": [3, 0, 3],
+			"to": [13, 16, 13],
+			"faces": {
+				"north": {"uv": [8, 4, 13, 12], "texture": "#all"},
+				"east": {"uv": [8, 4, 13, 12], "texture": "#all"},
+				"south": {"uv": [8, 4, 13, 12], "texture": "#all"},
+				"west": {"uv": [8, 4, 13, 12], "texture": "#all"}
+			}
+		}
+	]
+}

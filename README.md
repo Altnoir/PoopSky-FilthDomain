@@ -50,24 +50,28 @@ PoItems.POOP.get();
 - 前置的配方类型（`poopsky:sieve`、`poopsky:fly_barrel` 等）是数据驱动的：在 `src/main/resources/data/poopsky_filthdomain/recipe/...` 里写 JSON 并把 `"type"` 指向前置序列化器即可，JEI 显示自动生效。
 - 若想把自己的物品加进前置的创造栏，可用 `BuildCreativeModeTabContentsEvent` 判断 tab 后添加；本项目默认使用自己的创造栏。
 
-## 内置维度：绝望世界（desperate_world）
+## 内置维度：秽之域
 
-模组内置了"绝望世界"维度数据包（Nether 风格，5 个生物群系），全部挂在本模组命名空间下，不与其他模组冲突：
+维度 ID、维度类型和噪声配置均为 `poopsky_filthdomain:filthdomain`，分属不同注册表。
 
-- 维度 ID：`poopsky_filthdomain:filthdomain`
-- 维度类型：`poopsky_filthdomain:desperate_world`
-- 生物群系：`poopsky_filthdomain:desperate_wastes` / `desperate_soul_sand_valley` / `desperate_crimson` / `desperate_warped` / `desperate_basalt_deltas`
-- 地表/噪声/特性/雕刻器全部为 `poopsky_filthdomain:desperate_*`
+| 群系 | ID |
+| --- | --- |
+| 秽原 | `poopsky_filthdomain:filth_plains` |
+| 粪便森林 | `poopsky_filthdomain:poop_forest` |
+| 魂灰谷 | `poopsky_filthdomain:soul_ash_valley` |
+| 赤菌林 | `poopsky_filthdomain:bloodcap_forest` |
+| 孢瘴林 | `poopsky_filthdomain:sporewood` |
+| 玄岩裂地 | `poopsky_filthdomain:basalt_badlands` |
 
-数据包内对**前置模组内容**的引用（`poopsky:poop_block`、`poopsky:urine` 流体、`poopsky:poolime`、`poopsky:poop_particle` 等）保持 `poopsky:` 不变。
+世界生成由 `datagen/worldgen` 中的注册引导生成。修改维度、群系、地物或方块标签后，在附属工程运行 `./gradlew runData`，输出位于 `src/generated/resources`。
 
-进入方式（数据包本身不含传送门，先直接传送）：
+测试时可以用命令进入维度。
 
-```
+```mcfunction
 /execute in poopsky_filthdomain:filthdomain run tp @s 0 64 0
 ```
 
-> 提示：维度的世界生成数据位于 `src/main/resources/data/poopsky_filthdomain/`，直接手写维护即可；**方块标签（`tags/block/`）由 datagen 生成**：`datagen/FDBlockTagGen.java` 采用与前置一致的 Registrate `addDataGenerator` 写法，通过 `FDTagsProvider`（+ `FDRegistrate`）单独挂载，避免两个 Registrate 实例并存时 RegistrateDataProvider 的并发竞态。改标签后运行 `./gradlew runData`（输出到 `src/generated/resources`）。如需传送物品/传送门，可在附属代码里加。
+群系使用了新的 ID。测试现有存档前请先备份，验证新区块生成时建议使用新存档。
 
 ## 可选：开发期免 publish（composite build）
 

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "section=bottom": {
+      "model": "poopsky_filthdomain:block/filthdomain_portal_bellow"
+    },
+    "section=center": {
+      "model": "poopsky_filthdomain:block/filthdomain_portal_center"
+    },
+    "section=top": {
+      "model": "poopsky_filthdomain:block/filthdomain_portal_top"
+    }
+  }
+}

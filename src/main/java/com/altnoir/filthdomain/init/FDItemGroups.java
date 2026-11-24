@@ -8,6 +8,7 @@ import com.altnoir.filthdomain.FilthDomain;
 import com.altnoir.abysslib.reginth.util.entry.RegistryEntry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 
@@ -37,7 +38,9 @@ public final class FDItemGroups {
 
     private static void populate(CreativeModeTab.ItemDisplayParameters parameters) {
         for (Item item : FDItems.getAllItems()) {
-            TS_ITEMS.add(item);
+            if (!(item instanceof BlockItem)) {
+                TS_ITEMS.add(item);
+            }
         }
         for (Item item : FDBlocks.getAllItems()) {
             TS_BLOCKS.add(item);

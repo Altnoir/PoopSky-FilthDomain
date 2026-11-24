@@ -1,0 +1,16 @@
+{
+  "targets": ["portal_swap"],
+  "passes": [
+    {
+      "name": "poopsky_filthdomain:portal_distortion",
+      "intarget": "minecraft:main",
+      "outtarget": "portal_swap",
+      "use_linear_filter": true
+    },
+    {
+      "name": "blit",
+      "intarget": "portal_swap",
+      "outtarget": "minecraft:main"
+    }
+  ]
+}

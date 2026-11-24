@@ -8,3 +8,6 @@ repo/
 *.ipr
 *.iws
 .vscode/
+
+/logs/
+/src/generated/resources/.cache/
