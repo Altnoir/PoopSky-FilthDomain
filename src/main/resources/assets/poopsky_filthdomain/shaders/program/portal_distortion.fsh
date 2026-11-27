@@ -37,7 +37,7 @@ void main() {
     float envelope = 1.0 - smoothstep(front - 0.16, front + 0.035, inward);
     float strength = Strength * smoothstep(0.0, 0.28, Progress);
     float effectStrength = strength * envelope;
-    float amplitude = 0.030 * effectStrength;
+    float amplitude = 0.016 * effectStrength;
     amplitude *= mix(1.0, 0.48, inward);
 
     if (amplitude <= 0.00001) {
@@ -47,10 +47,10 @@ void main() {
 
     vec2 radial = screen / max(radius, 0.001);
     vec2 tangent = vec2(-radial.y, radial.x);
-    float ripple = sin(24.0 * inward - Phase * 108.0 + 1.8 * sin(5.0 * screen.y + Phase * 44.0));
-    vec2 waves = vec2(sin(7.0 * screen.y + Phase * 74.0), cos(6.0 * screen.x - Phase * 62.0));
-    // Pull the sampled pixels inward to magnify the image outwards, keeping a small central area stable.
-    float stretchStart = max(0.14, 1.0 - front - 0.035);
+    float ripple = sin(15.0 * inward - Phase * 68.0 + 1.2 * sin(3.5 * screen.y + Phase * 30.0));
+    vec2 waves = vec2(sin(4.5 * screen.y + Phase * 48.0), cos(4.0 * screen.x - Phase * 42.0));
+    // Advance the stretch for the full charge while leaving a small central area stable at full strength.
+    float stretchStart = mix(0.965, 0.14, Progress);
     float stretch = 0.29 * strength * cornerRadius * stretchDistance(normalizedRadius, stretchStart, 0.195);
     vec2 stretchedUv = texCoord - 0.5 * radial * stretch / aspect;
     vec2 displaced = stretchedUv + (0.65 * waves + 0.55 * tangent * ripple) * amplitude / aspect;

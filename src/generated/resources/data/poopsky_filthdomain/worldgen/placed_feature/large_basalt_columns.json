@@ -6,6 +6,9 @@
       "count": 2
     },
     {
+      "type": "poopsky_filthdomain:upper_terrain"
+    },
+    {
       "type": "minecraft:biome"
     }
   ]

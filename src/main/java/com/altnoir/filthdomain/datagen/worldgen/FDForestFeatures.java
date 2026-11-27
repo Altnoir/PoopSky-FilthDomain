@@ -1,6 +1,7 @@
 package com.altnoir.filthdomain.datagen.worldgen;
 
 import com.altnoir.filthdomain.FilthDomain;
+import com.altnoir.filthdomain.worldgen.UpperTerrainPlacement;
 import com.altnoir.poopsky.init.PoBlocks;
 import com.altnoir.poopsky.worldgen.PoConfigureFeatures;
 import net.minecraft.core.Direction;
@@ -35,6 +36,7 @@ final class FDForestFeatures {
         context.register(ResourceKey.create(Registries.PLACED_FEATURE, FilthDomain.loc(path)),
                 new PlacedFeature(context.lookup(Registries.CONFIGURED_FEATURE).getOrThrow(feature), List.of(
                         CountOnEveryLayerPlacement.of(attempts),
+                        UpperTerrainPlacement.INSTANCE,
                         BlockPredicateFilter.forPredicate(BlockPredicate.allOf(
                                 BlockPredicate.ONLY_IN_AIR_PREDICATE,
                                 BlockPredicate.matchesBlocks(Direction.DOWN.getNormal(), List.of(floor)))),

@@ -1,15 +1,16 @@
 package com.altnoir.filthdomain.datagen;
 
+import com.altnoir.filthdomain.init.FDBlocks;
 import com.altnoir.filthdomain.tag.FDTags;
 import com.altnoir.poopsky.init.PoBlocks;
 import com.altnoir.abysslib.reginth.providers.ReginthTagsProvider;
 import net.minecraft.data.tags.IntrinsicHolderTagsProvider;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
 
 /**
  * 绝望世界维度使用的方块标签（与前置 {@code BlockTagGen} 同样的 Registrate 写法）。
- * 引用的都是前置 PoopSky 的方块，与数据包中的 worldgen 数据配合使用。
  * <p>
  * 注意：不注册 unassociated BLOCK_TAGS 生成器（否则 RegistrateDataProvider 的急切
  * 调用会与并发 run 产生 ConcurrentModificationException 竞态），而是由
@@ -43,6 +44,8 @@ public final class FDBlockTagGen {
         };
         tag(FDTags.Blocks.BASE_POOP).add(basePoopBlocks);
         tag(FDTags.Blocks.FILTH_CAVE_REPLACEABLES).add(basePoopBlocks);
+        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
+                FDBlocks.HARDENED_POOP_BLOCK.get(), FDBlocks.CALCIUM_BLOCK.get(), FDBlocks.FILTHBEDROCK.get());
     }
 
     private static IntrinsicHolderTagsProvider.IntrinsicTagAppender<Block> tag(TagKey<Block> tag) {

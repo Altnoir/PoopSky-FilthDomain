@@ -17,12 +17,15 @@
       "height": {
         "type": "minecraft:uniform",
         "max_inclusive": {
-          "below_top": 4
+          "absolute": 235
         },
         "min_inclusive": {
-          "above_bottom": 4
+          "absolute": 4
         }
       }
+    },
+    {
+      "type": "poopsky_filthdomain:upper_terrain"
     },
     {
       "type": "minecraft:biome"

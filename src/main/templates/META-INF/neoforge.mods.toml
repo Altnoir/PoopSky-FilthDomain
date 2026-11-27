@@ -10,6 +10,9 @@ displayURL = "https://github.com/Altnoir/PoopSkyMod"
 authors = "${mod_authors}"
 description = '''${mod_description}'''
 
+[[mixins]]
+config = "poopsky_filthdomain.mixins.json"
+
 [[dependencies.${mod_id}]]
 modId = "neoforge"
 type = "required"

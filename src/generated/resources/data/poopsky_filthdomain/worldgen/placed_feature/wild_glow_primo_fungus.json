@@ -6,6 +6,9 @@
       "count": 3
     },
     {
+      "type": "poopsky_filthdomain:upper_terrain"
+    },
+    {
       "type": "minecraft:block_predicate_filter",
       "predicate": {
         "type": "minecraft:all_of",

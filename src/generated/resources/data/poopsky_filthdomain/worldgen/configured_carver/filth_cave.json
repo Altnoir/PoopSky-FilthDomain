@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:cave",
+  "type": "poopsky_filthdomain:filth_cave",
   "config": {
     "debug_settings": {
       "air_state": {
@@ -36,7 +36,7 @@
       "min_inclusive": 0.7
     },
     "lava_level": {
-      "above_bottom": 8
+      "absolute": 8
     },
     "probability": 0.07,
     "replaceable": "#poopsky_filthdomain:filth_cave_replaceables",
@@ -51,7 +51,7 @@
         "absolute": 47
       },
       "min_inclusive": {
-        "above_bottom": 8
+        "absolute": 8
       }
     },
     "yScale": {

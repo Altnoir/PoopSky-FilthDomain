@@ -12,6 +12,9 @@ import com.altnoir.filthdomain.init.FDItemGroups;
 import com.altnoir.filthdomain.init.FDItems;
 import com.altnoir.filthdomain.init.FDParticles;
 import com.altnoir.filthdomain.init.FDSoundEvents;
+import com.altnoir.filthdomain.network.FlightHarnessInputPayload;
+import com.altnoir.filthdomain.worldgen.FilthCaveCarver;
+import com.altnoir.filthdomain.worldgen.UpperTerrainPlacement;
 import com.mojang.logging.LogUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -37,7 +40,7 @@ public class FilthDomain {
     private static final Reginth REGINTH = Reginth.create(MOD_ID);
 
     public FilthDomain(IEventBus modEventBus) {
-        FDItems.register();
+        FDItems.register(modEventBus);
         FDBlocks.register();
         FDBlockEntities.register(modEventBus);
         FDItemGroups.register();
@@ -45,9 +48,12 @@ public class FilthDomain {
         FDEntityType.register(modEventBus);
         FDParticles.register(modEventBus);
         FDSoundEvents.register(modEventBus);
+        UpperTerrainPlacement.register(modEventBus);
+        FilthCaveCarver.register(modEventBus);
         modEventBus.addListener(FDDataGenerators::gatherData);
         modEventBus.addListener(FilthDomain::registerEntityAttributes);
         modEventBus.addListener(FilthDomain::registerSpawnPlacements);
+        modEventBus.addListener(FlightHarnessInputPayload::register);
     }
 
     public static Reginth registrate() {

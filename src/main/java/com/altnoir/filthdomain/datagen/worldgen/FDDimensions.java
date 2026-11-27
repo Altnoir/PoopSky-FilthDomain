@@ -1,6 +1,7 @@
 package com.altnoir.filthdomain.datagen.worldgen;
 
 import com.altnoir.filthdomain.FilthDomain;
+import com.altnoir.filthdomain.worldgen.FilthTerrainSettings;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
@@ -34,7 +35,8 @@ final class FDDimensions {
     static void bootstrapTypes(BootstrapContext<DimensionType> context) {
         context.register(FILTH_DOMAIN_TYPE, new DimensionType(
                 OptionalLong.of(18000), false, true, false, true, 8.0,
-                false, false, 0, 256, 128, BlockTags.INFINIBURN_NETHER,
+                false, false, FilthTerrainSettings.MIN_Y, FilthTerrainSettings.HEIGHT, FilthTerrainSettings.HEIGHT,
+                BlockTags.INFINIBURN_NETHER,
                 BuiltinDimensionTypes.NETHER_EFFECTS, 0.6F,
                 new DimensionType.MonsterSettings(false, false, ConstantInt.of(7), 15)));
     }
@@ -56,7 +58,7 @@ final class FDDimensions {
         )));
         context.register(FILTH_DOMAIN, new LevelStem(context.lookup(Registries.DIMENSION_TYPE).getOrThrow(FILTH_DOMAIN_TYPE),
                 new NoiseBasedChunkGenerator(biomeSource, context.lookup(Registries.NOISE_SETTINGS)
-                        .getOrThrow(FDTerrain.FILTH_NOISE))));
+                        .getOrThrow(FilthTerrainSettings.NOISE_SETTINGS))));
     }
 
     private static Pair<Climate.ParameterPoint, Holder<Biome>> biome(

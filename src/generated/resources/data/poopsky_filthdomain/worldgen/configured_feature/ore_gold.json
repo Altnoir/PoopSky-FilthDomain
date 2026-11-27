@@ -9,7 +9,7 @@
           "Name": "poopsky:golden_poop_block"
         },
         "target": {
-          "block": "poopsky:poop_block",
+          "block": "poopsky:dried_poop_block",
           "predicate_type": "minecraft:block_match"
         }
       }

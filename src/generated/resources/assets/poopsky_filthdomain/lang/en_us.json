@@ -1,9 +1,13 @@
 {
+  "block.poopsky_filthdomain.calcium_block": "Calcium Block",
   "block.poopsky_filthdomain.filth_domain_block": "Filth Domain Block",
+  "block.poopsky_filthdomain.filthbedrock": "Filthbedrock",
   "block.poopsky_filthdomain.filthdomain_portal": "Filth Domain Portal",
+  "block.poopsky_filthdomain.hardened_poop_block": "Hardened Poop Block",
   "item.poopsky_filthdomain.basilisk_spawn_egg": "Basilisk Spawn Egg",
   "item.poopsky_filthdomain.eye_of_basilisk": "Eye Of Basilisk",
   "item.poopsky_filthdomain.filth_domain_shard": "Filth Domain Shard",
+  "item.poopsky_filthdomain.miasma_harness": "Miasma Flight Harness",
   "itemGroup.poopsky_filthdomain": "Sky Toilet: Filth Domain",
   "itemGroup.poopsky_filthdomain.section.blocks": "Blocks",
   "itemGroup.poopsky_filthdomain.section.items": "Items"

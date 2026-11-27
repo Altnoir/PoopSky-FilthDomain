@@ -12,7 +12,6 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.LivingEntity;
@@ -27,6 +26,8 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.level.ChunkEvent;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
+
 @EventBusSubscriber(modid = FilthDomain.MOD_ID)
 public final class FilthDomainPortalBlockEntity extends BlockEntity {
     public static final int HORIZONTAL_REACH = 2;
@@ -40,6 +41,7 @@ public final class FilthDomainPortalBlockEntity extends BlockEntity {
     @Nullable
     private GlobalPos linkedPortal;
     private boolean active;
+    private List<LivingEntity> nearbyEntities = List.of();
     private float previousOpacity;
     private float opacity;
 
@@ -94,39 +96,52 @@ public final class FilthDomainPortalBlockEntity extends BlockEntity {
     }
 
     public static void serverTick(Level level, BlockPos pos, BlockState state, FilthDomainPortalBlockEntity portal) {
-        ServerLevel server = (ServerLevel) level;
+        boolean scan = Math.floorMod(level.getGameTime(), SCAN_INTERVAL) == Math.floorMod(pos.asLong(), SCAN_INTERVAL);
+        if (!scan && !portal.active) {
+            return;
+        }
+
         var block = (FilthDomainPortalBlock) state.getBlock();
         AABB bounds = activationBounds(pos);
-        if (Math.floorMod(level.getGameTime(), SCAN_INTERVAL) == Math.floorMod(pos.asLong(), SCAN_INTERVAL)) {
-            boolean occupied = block.isComplete(level, pos) && !level.getEntitiesOfClass(LivingEntity.class, bounds,
-                    entity -> entity.isAlive() && !entity.isSpectator()).isEmpty();
+        if (scan) {
+            portal.nearbyEntities = block.isComplete(level, pos)
+                    ? level.getEntitiesOfClass(LivingEntity.class, bounds, entity -> entity.isAlive() && !entity.isSpectator())
+                    : List.of();
+            boolean occupied = !portal.nearbyEntities.isEmpty();
             if (portal.active != occupied) {
                 portal.active = occupied;
                 level.sendBlockUpdated(pos, state, state, Block.UPDATE_CLIENTS);
             }
         }
-
         if (portal.active) {
-            for (ServerPlayer player : server.players()) {
-                if (player.isAlive() && !player.isSpectator() && player.canUsePortal(false)
-                        && bounds.intersects(player.getBoundingBox())) {
-                    markPlayerInside(block, server, player, pos);
+            LivingEntity widestTraveler = null;
+            for (LivingEntity entity : portal.nearbyEntities) {
+                if (entity.level() == level && entity.isAlive() && !entity.isSpectator()
+                        && bounds.intersects(entity.getBoundingBox()) && entity.canUsePortal(false)) {
+                    if (markEntityInside(block, level, entity, pos) && scan && !entity.isOnPortalCooldown()
+                            && (widestTraveler == null || entity.getBbWidth() > widestTraveler.getBbWidth())) {
+                        widestTraveler = entity;
+                    }
                 }
+            }
+            if (widestTraveler != null) {
+                block.preloadDestination((ServerLevel) level, pos, portal.linkedPortal, widestTraveler);
             }
         }
     }
 
-    private static void markPlayerInside(FilthDomainPortalBlock block, ServerLevel level, ServerPlayer player, BlockPos pos) {
-        if (player.portalProcess != null && player.portalProcess.isSamePortal(block)) {
-            BlockPos previous = player.portalProcess.getEntryPosition();
+    private static boolean markEntityInside(FilthDomainPortalBlock block, Level level, LivingEntity entity, BlockPos pos) {
+        if (entity.portalProcess != null && entity.portalProcess.isSamePortal(block)) {
+            BlockPos previous = entity.portalProcess.getEntryPosition();
             if (!previous.equals(pos)) {
-                if (activationBounds(previous).intersects(player.getBoundingBox()) && block.isComplete(level, previous)) {
-                    return;
+                if (activationBounds(previous).intersects(entity.getBoundingBox()) && block.isComplete(level, previous)) {
+                    return false;
                 }
-                player.portalProcess = null;
+                entity.portalProcess = null;
             }
         }
-        player.setAsInsidePortal(block, pos);
+        entity.setAsInsidePortal(block, pos);
+        return true;
     }
 
     public static void clientTick(Level level, BlockPos pos, BlockState state, FilthDomainPortalBlockEntity portal) {

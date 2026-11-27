@@ -4,9 +4,11 @@ import com.altnoir.filthdomain.FilthDomain;
 import com.altnoir.filthdomain.content.block.FilthDomainPortalBlock;
 import com.altnoir.abysslib.reginth.Reginth;
 import com.altnoir.abysslib.reginth.util.entry.BlockEntry;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
@@ -31,6 +33,13 @@ public final class FDBlocks {
                     provider.models().cubeAll(context.getName(), provider.mcLoc("block/brown_terracotta"))))
             .register();
 
+    public static final BlockEntry<Block> HARDENED_POOP_BLOCK = terrainBlock(
+            "hardened_poop_block", "Hardened Poop Block", MapColor.TERRACOTTA_BROWN, SoundType.TUFF, 2.5F);
+    public static final BlockEntry<Block> CALCIUM_BLOCK = terrainBlock(
+            "calcium_block", "Calcium Block", MapColor.TERRACOTTA_WHITE, SoundType.CALCITE, 2.0F);
+    public static final BlockEntry<Block> FILTHBEDROCK = terrainBlock(
+            "filthbedrock", "Filthbedrock", MapColor.COLOR_GRAY, SoundType.DEEPSLATE, 3.5F);
+
     public static final BlockEntry<FilthDomainPortalBlock> FILTHDOMAIN_PORTAL = REGISTRATE
             .block("filthdomain_portal", props -> new FilthDomainPortalBlock(props.strength(2.0F)
                     .mapColor(MapColor.COLOR_BROWN).lightLevel(state -> 15)
@@ -52,6 +61,14 @@ public final class FDBlocks {
             .build()
             .register();
 
+    private static BlockEntry<Block> terrainBlock(String id, String name, MapColor color, SoundType sound, float hardness) {
+        return REGISTRATE.block(id, props -> new Block(props.mapColor(color).sound(sound)
+                        .strength(hardness, 6.0F).requiresCorrectToolForDrops()))
+                .lang(name)
+                .simpleItem()
+                .register();
+    }
+
     public static List<Item> getAllItems() {
         return REGISTRATE.getAll(Registries.BLOCK).stream()
                 .map(DeferredHolder::get)
@@ -60,5 +77,8 @@ public final class FDBlocks {
     }
 
     public static void register() {
+        var oldId = FilthDomain.loc("dense_calcium_rock");
+        BuiltInRegistries.BLOCK.addAlias(oldId, FILTHBEDROCK.getId());
+        BuiltInRegistries.ITEM.addAlias(oldId, FILTHBEDROCK.getId());
     }
 }

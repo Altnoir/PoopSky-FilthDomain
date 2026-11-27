@@ -18,6 +18,9 @@
       },
       "placement": [
         {
+          "type": "poopsky_filthdomain:upper_terrain"
+        },
+        {
           "type": "minecraft:block_predicate_filter",
           "predicate": {
             "type": "minecraft:all_of",
@@ -28,7 +31,7 @@
               },
               {
                 "type": "minecraft:matching_blocks",
-                "blocks": "poopsky:poop_block",
+                "blocks": "poopsky:dried_poop_block",
                 "offset": [
                   0,
                   -1,

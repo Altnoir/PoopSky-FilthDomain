@@ -5,6 +5,7 @@ import com.altnoir.filthdomain.init.FDBlockEntities;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.GlobalPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.entity.Entity;
@@ -115,7 +116,17 @@ public final class FilthDomainPortalBlock extends BaseEntityBlock implements Por
     @Nullable
     @Override
     public DimensionTransition getPortalDestination(ServerLevel level, Entity entity, BlockPos pos) {
-        return FilthDomainPortalDestination.find(level, entity, pos, this);
+        var profiler = level.getProfiler();
+        profiler.push("filthDomainPortalDestination");
+        try {
+            return FilthDomainPortalDestination.find(level, entity, pos, this);
+        } finally {
+            profiler.pop();
+        }
+    }
+
+    public void preloadDestination(ServerLevel level, BlockPos pos, @Nullable GlobalPos link, LivingEntity traveler) {
+        FilthDomainPortalDestination.preload(level, pos, link, traveler);
     }
 
     public boolean isComplete(Level level, BlockPos pos) {

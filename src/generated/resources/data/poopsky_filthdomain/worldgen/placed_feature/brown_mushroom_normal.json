@@ -13,6 +13,9 @@
       "heightmap": "MOTION_BLOCKING"
     },
     {
+      "type": "poopsky_filthdomain:upper_terrain"
+    },
+    {
       "type": "minecraft:biome"
     }
   ]
